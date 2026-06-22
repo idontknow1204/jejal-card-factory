@@ -1,0 +1,52 @@
+import Link from "next/link";
+
+export default async function PromptsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  return (
+    <div className="min-h-screen bg-[#FAFAFA]">
+      <header className="bg-white border-b border-[#E5E5E5] px-6 py-4">
+        <div className="max-w-5xl mx-auto flex items-center gap-3">
+          <Link href={`/projects/${id}`} className="text-[#9A9A9A] hover:text-[#111111] transition-colors text-sm">
+            ← Project
+          </Link>
+          <span className="text-[#E5E5E5]">/</span>
+          <span className="font-bold text-[#111111] text-sm">3. Prompts</span>
+        </div>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-6 py-10">
+        <div className="mb-6">
+          <h1 className="text-2xl font-extrabold text-[#111111]">Image Prompts</h1>
+          <p className="text-[#9A9A9A] text-sm mt-1">
+            Edit character image prompts for each card (character_bible.md)
+          </p>
+        </div>
+        <div className="bg-white border border-[#E5E5E5] rounded-2xl p-10 text-center">
+          <p className="text-[#9A9A9A] font-medium">Image prompt editor — coming soon</p>
+          <p className="text-xs text-[#9A9A9A] mt-2">
+            Claude generates prompts → CMO edits → sent to GPT-Image. No text in images.
+          </p>
+          <div className="flex justify-center gap-3 mt-6">
+            <Link
+              href={`/projects/${id}/copy`}
+              className="text-sm border border-[#E5E5E5] text-[#9A9A9A] font-bold px-4 py-2 rounded-lg hover:border-[#111111] hover:text-[#111111] transition-colors"
+            >
+              ← Copy
+            </Link>
+            <Link
+              href={`/projects/${id}/images`}
+              className="text-sm bg-[#111111] text-white font-bold px-4 py-2 rounded-lg hover:bg-[#FF441F] transition-colors"
+            >
+              Next: Images →
+            </Link>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
