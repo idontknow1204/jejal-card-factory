@@ -2,17 +2,6 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm ci",
-  "functions": {
-    "app/api/projects/[id]/generate-story/route.ts": {
-      "maxDuration": 120
-    },
-    "app/api/projects/[id]/images/generate/route.ts": {
-      "maxDuration": 120
-    },
-    "app/api/projects/[id]/final/approve/route.ts": {
-      "maxDuration": 60
-    }
-  },
   "headers": [
     {
       "source": "/api/auth/(.*)",
